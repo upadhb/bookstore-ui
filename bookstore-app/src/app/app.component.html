@@ -1,0 +1,23 @@
+<div class="appNavigationBar">
+  <nav class="navbar navbar-light bg-faded">
+    <ngb-tabset>
+      <ngb-tab>
+        <ng-template ngbTabTitle><a class="navbar-brand navigationTab" routerLink="homePage" routerLinkActive="activeLink">Home</a></ng-template>
+        <ng-template ngbTabContent>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle><a class="navbar-brand navigationTab" routerLink="myBooks" routerLinkActive="activeLink">My Books</a>
+        </ng-template>
+        <ng-template ngbTabContent>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle><a class="navbar-brand navigationTab" routerLink="contactUs" routerLinkActive="activeLink">Contact Us</a></ng-template>
+        <ng-template ngbTabContent>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </nav>
+</div>
+<router-outlet></router-outlet>

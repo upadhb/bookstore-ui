@@ -1,0 +1,10 @@
+div {
+  &.myBooks {
+    clear: both;
+   >div {
+     width: 300px;
+     float: left;
+     padding: 10px;
+   }
+  }
+}

@@ -1,0 +1,36 @@
+table {
+  &.bookTable {
+    thead {
+      &.bookTitles {
+        tr {
+          th {
+            text-align: center !important;
+          }
+        }
+      }
+    }
+    tbody {
+      &.bookRow {
+        tr:nth-child(even) {
+          background-color: #f1f2f4;
+        }
+        tr{
+          td {
+            padding: 5px 6px;
+            >button {
+              margin-top: 2px;
+            }
+            span {
+              &.wrapWords {
+                white-space: nowrap;
+                height: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

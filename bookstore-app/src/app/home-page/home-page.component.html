@@ -1,0 +1,6 @@
+<div class="homePage">
+  <div class="booksTable">
+    <!--<ng2-smart-table [settings]="tableSetting" [source]="bookList"></ng2-smart-table>-->
+    <app-book-table [bookList]="bookList" (selectedBooks)="addedBooks($event)"></app-book-table>
+  </div>
+</div>
