@@ -12,6 +12,7 @@ export class HomePageComponent implements OnInit {
 
   homePage: HomePage = new HomePage();
   tableSetting: object = tableSettingModal;
+  _selectedBooks = selectedBooks;
 
   constructor( private homePageService: HomePageService) {
   }
@@ -28,6 +29,7 @@ export class HomePageComponent implements OnInit {
       .subscribe( response => {
         this.homePage.bookList = response;
         this.homePage.filteredBookList = this.homePage.bookList;
+        this.homePageService.checkIfBookWasAdded(this.homePage.filteredBookList, this._selectedBooks);
       }, error => {
         this.homePage.filteredBookList = [];
         console.log(error);

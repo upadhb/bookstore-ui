@@ -13,7 +13,10 @@
     <tr *ngFor="let book of bookList">
       <td>
         <img src="{{book.imageUrl}}">
-        <button class="btn btn-primary" (click)="addBook(book)">Add to books</button>
+        <button class="btn btn-primary" (click)="addBook(book)">
+          <span *ngIf="!book.added">Add to books</span>
+          <i class="fa fa-check" aria-hidden="true" *ngIf="book.added"></i>
+        </button>
       </td>
       <td>{{book.title}}</td>
       <td>{{book.description}}</td>

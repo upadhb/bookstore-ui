@@ -13,6 +13,7 @@ export class BookTableComponent implements OnInit {
   }
 
   addBook (book): void {
+    book.added = true;
     this.selectedBooks.emit(book);
   }
 }

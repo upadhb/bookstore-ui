@@ -1,0 +1,35 @@
+<button class="btn btn-danger goBack" [routerLink]="['/myBooks']" triggers="mouseenter:mouseleave"
+        ngbPopover="Go back to My Books" placement="left">
+  <i class="fa fa-window-close" aria-hidden="true"></i>
+</button>
+<div class="col-md-12">
+  <div class="row selectedBookSection">
+    <div class="col-md-3">
+      <img src="{{_selectedBook.imageUrl}}">
+    </div>
+    <div class="col-md-9">
+      <div class="col-md-12">
+        <strong>Title: </strong>{{_selectedBook.title}}
+      </div>
+      <div class="col-md-12">
+        <strong>Language: </strong>{{_selectedBook.language}}
+      </div>
+      <div class="col-md-12">
+        <strong>ISBN: </strong>{{_selectedBook.isbn}}
+      </div>
+      <div class="col-md-12">
+        <strong>Publication Date: </strong>{{_selectedBook.publicationDate}}
+      </div>
+      <div class="col-md-12">
+        <strong>Total number of pages: </strong>{{_selectedBook.nbOfPages}}
+      </div>
+      <div class="col-md-12">
+        <strong>Price: </strong>{{_selectedBook.unitCost | currency: 'USD': true: '1.2-2'}}
+      </div>
+      <div class="col-md-12" [ngClass]="{'bookDescription': !_shoMore.show}">
+        <strong>Description: </strong>{{_selectedBook.description}}
+      </div>
+      <a class="shoMoreless" (click)="toggleShowMore()">..show {{_shoMore.label}}</a>
+    </div>
+  </div>
+</div>

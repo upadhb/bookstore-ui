@@ -19,6 +19,11 @@ table {
             padding: 5px 6px;
             >button {
               margin-top: 2px;
+              >i {
+                &.fa-check {
+                  padding: 3px 40px;
+                }
+              }
             }
             span {
               &.wrapWords {

@@ -4,6 +4,7 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {Ng2SmartTableModule} from "ng2-smart-table";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import {AppRoutingModule, routableComponents} from "./app.module.routing";
@@ -25,7 +26,8 @@ import {MyBooksService} from "./my-books/my-books.service";
     NgbModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    AngularFontAwesomeModule
 
   ],
   providers: [

@@ -13,7 +13,7 @@ div {
     padding: 20px 5px;
     font-size: 20px;
     top: 0;
-    background-color: white;
+    background-color: #a6bdf8;
     z-index: 100;
     text-align: center;
   }
@@ -40,5 +40,14 @@ div {
         }
       }
     }
+  }
+}
+
+button {
+  &.goBack {
+    position: absolute;
+    right:.5%;
+    cursor: pointer;
+    z-index: 100;
   }
 }
