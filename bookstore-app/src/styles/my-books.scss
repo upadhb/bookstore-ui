@@ -7,4 +7,14 @@ div {
      padding: 10px;
    }
   }
+  &.bookTotal {
+    position: -webkit-sticky;
+    position: sticky;
+    padding: 20px 5px;
+    font-size: 20px;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    text-align: center;
+  }
 }

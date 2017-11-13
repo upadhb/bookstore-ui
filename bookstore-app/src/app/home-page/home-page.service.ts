@@ -5,11 +5,10 @@ import { forEach } from "lodash";
 
 @Injectable()
 export class HomePageService {
-
+  private _getBooksUrl = "../../assets/books.json";
   constructor( private httpService: HttpServiceService ) {}
 
   getBooks() {
-    const sourceUrl = "../../assets/books.json";
-   return this.httpService.get(sourceUrl);
+   return this.httpService.get(this._getBooksUrl);
   }
 }

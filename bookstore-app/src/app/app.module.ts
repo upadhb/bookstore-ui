@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {Ng2SmartTableModule} from "ng2-smart-table";
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import {AppRoutingModule, routableComponents} from "./app.module.routing";
-import {HttpModule} from '@angular/http';
 import {HttpServiceService} from "./shared/shared-services/httpService.service";
 import {HomePageService} from "./home-page/home-page.service";
 import { BookTableComponent } from './shared/book-table/book-table.component';
+import {MyBooksService} from "./my-books/my-books.service";
 
 
 @NgModule({
@@ -23,11 +24,15 @@ import { BookTableComponent } from './shared/book-table/book-table.component';
     FormsModule,
     NgbModule.forRoot(),
     AppRoutingModule,
-    HttpModule,
+    HttpClientModule,
     Ng2SmartTableModule
 
   ],
-  providers: [HttpServiceService, HomePageService],
+  providers: [
+    HttpServiceService,
+    HomePageService,
+    MyBooksService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

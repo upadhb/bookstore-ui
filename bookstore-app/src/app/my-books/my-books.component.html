@@ -1,5 +1,8 @@
-<div>
-  <div *ngFor="let book of myBookList"  class="myBooks">
+<div class="col-md-6 bookTotal">
+  <strong>My Total cost: {{_totalAmount | currency: 'USD': true: '1.2-2'}}</strong>
+</div>
+<div class="col-md-6">
+  <div *ngFor="let book of _myBookList"  class="myBooks">
     <div> <img src="{{book.imageUrl}}"></div>
     <div>{{book.title}}</div>
     <div>{{book.unitCost | currency: 'USD': true: '1.2-2'}}</div>
