@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {tableSettingModal, selectedBooks} from './home-page.model';
+import {tableSettingModal, selectedBooks, HomePage} from './home-page.model';
 import {HomePageService} from "./home-page.service";
 
 @Component({
@@ -10,33 +10,42 @@ import {HomePageService} from "./home-page.service";
 })
 export class HomePageComponent implements OnInit {
 
-  bookList: Array<any>;
-  selectedBooksList: Array<any> = selectedBooks;
+  homePage: HomePage = new HomePage();
   tableSetting: object = tableSettingModal;
-  constructor( private homePageService: HomePageService) { }
+
+  constructor( private homePageService: HomePageService) {
+  }
 
   ngOnInit() {
-  this.bookList = [];
+    this.homePage.filterBy = '';
+    this.homePage.filteredBookList = [];
     this.getBooks();
   }
 
+  // get list of books
   getBooks() {
     this.homePageService.getBooks()
       .subscribe( response => {
-        this.bookList = response;
+        this.homePage.bookList = response;
+        this.homePage.filteredBookList = this.homePage.bookList;
       }, error => {
-        this.bookList = [];
+        this.homePage.filteredBookList = [];
         console.log(error);
         }
       );
   }
 
+  // output from book-table component in caught here and emitted books are added
   addedBooks (book: object): void {
-    if (this.selectedBooksList.indexOf(book) < 0 ) {
-      this.selectedBooksList.push(book);
+    if (this.homePage.selectedBooksList.indexOf(book) < 0 ) {
+      this.homePage.selectedBooksList.push(book);
     }
-    console.log(this.selectedBooksList);
-    console.log(selectedBooks);
+  }
+
+  // filter when input value changes
+  filterBooksList (filterValue: string): void {
+    this.homePage.filteredBookList =
+      filterValue ? this.homePageService.getFilteredList(filterValue, this.homePage.bookList) : this.homePage.bookList;
   }
 
 }

@@ -1,6 +1,11 @@
 <div class="homePage">
   <div class="booksTable">
     <!--<ng2-smart-table [settings]="tableSetting" [source]="bookList"></ng2-smart-table>-->
-    <app-book-table [bookList]="bookList" (selectedBooks)="addedBooks($event)"></app-book-table>
+    <div class="col-md-4 bookSearch">
+      <label for="filterSearch"><strong>Filter Search </strong></label>
+      <input id="filterSearch" [(ngModel)]="homePage.filterBy" (input)="filterBooksList(homePage.filterBy)"
+             placeholder="Advanced Javascript, etc.." class="form form-control">
+    </div>
+    <app-book-table [bookList]="homePage.filteredBookList" (selectedBooks)="addedBooks($event)"></app-book-table>
   </div>
 </div>

@@ -51,3 +51,10 @@ export class Book {
 }
 
 export const selectedBooks = [];
+
+export class HomePage {
+  bookList: Array<any>;
+  filteredBookList: Array<any>;
+  filterBy: string;
+  selectedBooksList: Array<any> = selectedBooks;
+}
