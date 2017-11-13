@@ -3,7 +3,7 @@
 </div>
 <div class="col-md-6">
   <div *ngFor="let book of _myBookList"  class="myBooks">
-    <div> <img src="{{book.imageUrl}}"></div>
+    <div><a [routerLink]="['/myBooks', book.id]"><img src="{{book.imageUrl}}"></a></div>
     <div>{{book.title}}</div>
     <div>{{book.unitCost | currency: 'USD': true: '1.2-2'}}</div>
   </div>

@@ -17,4 +17,28 @@ div {
     z-index: 100;
     text-align: center;
   }
+  &.selectedBookSection {
+    >div {
+      border: 1px solid lightgrey;
+      padding: 5px;
+
+      >div {
+        padding: 3px 2px;
+
+        &.bookDescription {
+          white-space: nowrap;
+          width: 70%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      a {
+        &.shoMoreless, &.shoMoreless:hover {
+          color: blue;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }

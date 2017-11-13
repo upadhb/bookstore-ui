@@ -39,22 +39,27 @@ export const mockBooksTableData = [
 ];
 
 export class Book {
-  id: number = null;
-  title: string = null;
-  description: string = null;
-  unitCost: number = null;
-  isbn: string = null;
-  publicationDate: string = null;
-  nbOfPages: number = null;
-  imageUrl: string = null;
-  language: string = null;
+  'id': number = null;
+  'title': string = null;
+  'description': string = null;
+  'unitCost': number = null;
+  'isbn': string = null;
+  'publicationDate': string = null;
+  'nbOfPages': number = null;
+  'imageUrl': string = null;
+  'language': string = null;
 }
 
 export const selectedBooks = [];
 
 export class HomePage {
-  bookList: Array<any>;
-  filteredBookList: Array<any>;
-  filterBy: string;
+  bookList: Array<any> = [];
+  filteredBookList: Array<any> = [];
+  filterBy: String = '';
   selectedBooksList: Array<any> = selectedBooks;
+}
+
+export class ShowMore {
+  'show': Boolean = false;
+  'label': String = 'more';
 }

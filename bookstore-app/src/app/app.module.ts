@@ -17,7 +17,7 @@ import {MyBooksService} from "./my-books/my-books.service";
   declarations: [
     AppComponent,
     routableComponents,
-    BookTableComponent,
+    BookTableComponent
   ],
   imports: [
     BrowserModule,
