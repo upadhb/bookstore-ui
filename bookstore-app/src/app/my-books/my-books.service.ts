@@ -1,6 +1,6 @@
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 
-import { forEach} from "lodash";
+import { forEach} from 'lodash';
 
 @Injectable()
 export class MyBooksService {

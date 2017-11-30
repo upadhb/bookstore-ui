@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { HttpServiceService } from "../shared/shared-services/httpService.service";
-import { forEach, find } from "lodash";
+import { forEach, find } from 'lodash';
 
 @Injectable()
 export class HomePageService {
